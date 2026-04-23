@@ -20,7 +20,7 @@ async def create_note(
     supabase.storage.from_("notes").upload(
         path=filename,
         file=file_bytes,
-        file_options={"content-type": "application/pdf"}
+        file_options={"content-type": "application/pdf", "x-upsert": "true"}
     )
     
     file_url = supabase.storage.from_("notes").get_public_url(filename)
