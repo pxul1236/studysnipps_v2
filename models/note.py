@@ -3,8 +3,8 @@ from sqlmodel import SQLModel
 class NoteBase(SQLModel):
     title: str
     subject: str
-    description: str
     university: str
+    file_url: str
 
 class NoteCreate(NoteBase):
     pass
